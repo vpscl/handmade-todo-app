@@ -1,0 +1,211 @@
+/* RESET */
+
+@font-face {
+  font-family: "Summer";
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/Summer%20Font%20Regular.woff);
+}
+
+@font-face {
+  font-family: "Summer Bold";
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/Summer%20Font%20Bold.woff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+ol {
+  list-style: none;
+}
+
+body {
+  font: 28px/1.2 "Summer Bold";
+  margin: 1.5rem 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 700px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+/*=========== MAIN RULES ===========*/
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.todo-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 5px;
+  margin-bottom: 1rem;
+}
+
+input,
+button,
+.todo-stats > div {
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+
+button {
+  color: white;
+  text-transform: uppercase;
+  transition: 0.25s;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+button[type="submit"] ~ svg {
+  transition: 0.25s;
+}
+
+button[type="submit"]:active ~ svg,
+button[type="submit"]:active {
+  transform: scale(0.97);
+  fill: #111;
+}
+
+.form-wrapper,
+.todo-stats,
+.todo-stats > div,
+input,
+button {
+  position: relative;
+}
+
+.form-wrapper svg,
+.todo-stats svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.todo-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding: 5px 10px;
+  margin: 10px 0 20px;
+  color: white;
+}
+
+.todo-list li {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: auto 20px;
+  grid-column-gap: 10px;
+  padding: 0 10px;
+}
+
+.todo-list li + li {
+  margin-top: 1rem;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.todo-list [type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: -100%;
+}
+
+.todo-list label {
+  margin-right: 10px;
+  display: grid;
+}
+
+.todo-list svg.checkbox-empty {
+  display: grid;
+  width: 25px;
+}
+
+.todo-list span {
+  user-select: none;
+  padding: 0 8px;
+  transition: 0.3s;
+}
+
+.todo-list span:focus {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+.todo-list .checkbox-wrapper svg {
+  grid-column: 1;
+  grid-row: 1;
+  width: 20px;
+  height: 20px;
+}
+
+.todo-list svg.checkmark {
+  display: none;
+}
+
+.todo-list li.completed svg.checkmark {
+  display: block;
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through 1px;
+  opacity: 0.5;
+}
+
+.todo-list .remove-task {
+  display: flex;
+  padding: 2px;
+}
+
+.todo-list .remove-task svg {
+  width: 16px;
+  height: 16px;
+}
+/* .checkbox-wrapper{
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.checkbox-wrapper [type='checkbox']{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.checkbox-wrapper svg.checkbox-empty{
+    position: absolute;
+    background: aqua;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.checkbox-wrapper [type='checkbox']:checked + label > svg.checkbox-empty{
+    background: blue;
+
+
+} */
